@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:previsao_do_tempo/models/forecast.dart';
+import 'package:weather_forecast/models/forecast.dart';
 
 class Week extends StatelessWidget {
   final List<Forecast> forecastList;
@@ -27,11 +27,12 @@ class Week extends StatelessWidget {
       padding: EdgeInsets.only(right: 30),
       child: Column(
         children: [
-          Text(forecast.weekDay, style: Theme.of(context).textTheme.bodyText1),
+          Text(forecast.dayOfWeek,
+              style: Theme.of(context).textTheme.bodyText1),
           Padding(
               padding: EdgeInsets.symmetric(vertical: 5),
               child: SvgPicture.asset(forecast.icon, width: 20)),
-          Text("${forecast.temperature}°",
+          Text("${forecast.degrees}°",
               style: Theme.of(context).textTheme.caption)
         ],
       ),

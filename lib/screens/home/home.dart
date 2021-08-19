@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:previsao_do_tempo/provider/weather_server.dart';
-import 'package:previsao_do_tempo/screens/home/widgets/main_screen.dart';
+import 'package:weather_forecast/providers/weather_server.dart';
+import 'package:weather_forecast/screens/home/widgets/main_screen.dart';
 
 class Home extends StatefulWidget {
+  const Home({ Key? key }) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -12,17 +14,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: getData(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
+      builder: (BuildContext _, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
             return Scaffold(
               body: Center(
-                  child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation(Colors.white))),
+                child: CircularProgressIndicator(),
+              ),
             );
           default:
-            return MainScreen(snapshot.data["results"]);
+            return MainScreen(data: snapshot.data["results"]);
         }
       },
     );

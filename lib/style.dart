@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-Color grayTheme = Color(0xFF2E3643);
+Color greyTheme = Color(0xFF2E3643);

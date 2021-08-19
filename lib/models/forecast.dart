@@ -1,11 +1,11 @@
 class Forecast {
-  final String weekDay;
+  final String dayOfWeek;
   final String icon;
-  final int temperature;
-
+  final int degrees;
+  
   Forecast({
-    required this.weekDay,
+    required this.dayOfWeek,
     required this.icon,
-    required this.temperature,
+    required this.degrees,
   });
 }
