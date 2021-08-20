@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.yasminluzia.weather_forecast">
+    package="br.com.gabrielkulzer.previsao_do_tempo">
    <application
         android:label="Weather Forecast"
         android:icon="@mipmap/ic_launcher">
